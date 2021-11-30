@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://kit.fontawesome.com/58c82d8e71.js" crossorigin="anonymous"></script>
+    <script src="js/scripts.js" defer></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="content second-content">
+            <div class="first-column">
+                <h2 class="title  title-primary">Bora se cadastrar?</h2>
+                <p class="description description-primary ">Clique no botão </p>
+                <p class="description description-primary ">e se cadastre </p>
+                <button class="btn btn-primary " onclick="window.location.href='usuario.html'">Cadastrar</button>
+            </div>
+            <div class="second-column">
+                <h2 class="title title-second ">Olá visitante!!!</h2>
+                <div class="social-media">
+                    <ul class="list-social-media">
+                        <!-- social midia -->
+
+                        <a class="link-social-media" href="#">
+                            <li class="item-social-media">
+                                <i class="fab fa-facebook"></i>
+                            </li>
+                        </a>
+
+                        <a class="link-social-media" href="#">
+                            <li class="item-social-media">
+                                <i class="fab fa-google-plus"></i>
+                            </li>
+                        </a>
+
+                        <a class="link-social-media" href="#">
+                            <li class="item-social-media">
+                                <i class="fab fa-linkedin"></i>
+                            </li>
+                        </a>
+
+                    </ul>
+                </div>
+                <p class="description description-second ">Use seu EMAIL, CPF ou PIS para realizar o login:</p>
+
+                <form class="form" name="login" id="login" action="#" method="post">
+
+                    <label class="label-input" >
+                        <i class="far fa-envelope icon-modify "></i>
+                        <input type="text" name="usuario" id="usuario" placeholder="Email, Cpf ou Pis">
+                    </label>
+
+                    <label class="label-input" >
+                        <i class="fas fa-lock icon-modify "></i>
+                        <input type="password" name="senha" id="senha" placeholder="Password">
+                    </label>
+
+                    <a class="password" href="#">forgot your password?</a>
+
+                    <button class="btn  btn-second" id="send" value="enviar">Entrar</button>
+                </form>
+                
+                <!-- scond column -->
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
