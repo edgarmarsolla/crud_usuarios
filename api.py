@@ -30,7 +30,7 @@ class Usuarios:
         return response
 
     # Endpoint para adicionar informações do usuario no banco de dados
-    @router.post("/usuarios")
+    @router.post("/addusuarios")
     def add_usuario(self, usuario_informacao: Criando_atualizando_usuario):
 
         try:
@@ -40,7 +40,7 @@ class Usuarios:
             raise HTTPException(**cie.__dict__)
 
     # Endpoint para adicionar informações de endereço do usuario no banco de dados
-    @router.post("/endereco")
+    @router.post("/addendereco")
     def add_endereco(self, endereco_informacao: Criando_atualizando_endereco):
 
         try:
