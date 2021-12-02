@@ -38,8 +38,11 @@ function cadastraUsuario() {
             "usuario_senha": senha    
         }
 
-        fazPost(url, body)
+        usuario = fazPost(url, body);
     }else{
         return alert("Senha diferente de Confirma Senha");
     }
+    
+
+    
 }
