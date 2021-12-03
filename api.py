@@ -73,7 +73,7 @@ def get_endereco_info(endereco_id: int, session: Session = Depends(get_db)):
 
 
 # Atualizando Usuario ja existente
-@router.put("/usuario/{usuario_id}", response_model=Usuario)
+@router.put("/usuarioput/{usuario_id}", response_model=Usuario)
 def update_usuario(usuario_id: int, new_info: Criando_atualizando_usuario, session: Session = Depends(get_db)):
 
     try:
@@ -84,7 +84,7 @@ def update_usuario(usuario_id: int, new_info: Criando_atualizando_usuario, sessi
 
 
 # Atualizando Endereco ja existente
-@router.put("/endereco/{endereco_id}", response_model=Endereco)
+@router.put("/enderecoput/{endereco_id}", response_model=Endereco)
 def update_endereco(endereco_id: int, new_info: Criando_atualizando_endereco, session: Session = Depends(get_db)):
 
     try:
@@ -95,7 +95,7 @@ def update_endereco(endereco_id: int, new_info: Criando_atualizando_endereco, se
 
 
 # Deleta informações do usuario
-@router.delete("/usuario/{usuario_id}")
+@router.delete("/usuariodel/{usuario_id}")
 def delete_usuario(usuario_id: int, session: Session = Depends(get_db)):
 
     try:
@@ -105,7 +105,7 @@ def delete_usuario(usuario_id: int, session: Session = Depends(get_db)):
 
 
 # Deleta Endereõ do usuario
-@router.delete("/endereco/{endereco_id}")
+@router.delete("/enderecodel/{endereco_id}")
 def delete_endereco(endereco_id: int, session: Session = Depends(get_db)):
 
     try:
