@@ -1,19 +1,21 @@
-function fazPost(url, body) {
+async function fazPost(url, body) {
     console.log("Body", body)
-    let request = new XMLHttpRequest()
-    request.open("POST", url, true)
-    request.setRequestHeader("Content-type", "application/json")
-    request.send(JSON.stringify(body))
-
-    request.onload = function() {
-        console.log(this.responseText)
-    }
-
-    return request.responseText
+    let response = await fetch(url, {
+        method: "POST",
+        headers: {
+            "Content-type": "application/json",
+        },
+        body: JSON.stringify(body),
+    })
+    
+    let resposta = await response.json()
+    
+    
+    return resposta
 
 }
 
-function cadastraUsuario() {
+async function cadastraUsuario() {
     event.preventDefault();
     let url = "http://127.0.0.1:8000/addusuarios"
     let nome = document.getElementById("usuario_nome").value
@@ -38,11 +40,16 @@ function cadastraUsuario() {
             "usuario_senha": senha    
         }
 
-        usuario = fazPost(url, body);
+        let teste = await fazPost(url, body);
+
+        console.log(teste.usuario_id)
+
+
     }else{
         return alert("Senha diferente de Confirma Senha");
     }
-    
 
+    
+    
     
 }
