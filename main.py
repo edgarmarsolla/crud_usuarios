@@ -10,17 +10,17 @@ app = FastAPI()
 app.include_router(api.router)
 
 origins = [
-    "http://127.0.0.1:8000",
-    "http://127.0.0.1:8000/usuarios",
-    "http://127.0.0.1:8000/endereco",
-    "http://127.0.0.1:8000/addusuarios",
-    "http://127.0.0.1:8000/addendereco",
-    "http://127.0.0.1:8000/usuario/{usuario_id}",
-    "http://127.0.0.1:8000/endereco/{endereco_id}",
-    "http://127.0.0.1:8000/usuarioput/{usuario_id}",
-    "http://127.0.0.1:8000/enderecoput/{endereco_id}",
-    "http://127.0.0.1:8000/enderecodel/{usuario_id}",
-    "http://127.0.0.1:8000/enderecodel/{endereco_id}"
+    "https://projetocrudusuario.herokuapp.com/",
+    "https://projetocrudusuario.herokuapp.com/usuarios",
+    "https://projetocrudusuario.herokuapp.com/endereco",
+    "https://projetocrudusuario.herokuapp.com/addusuarios",
+    "https://projetocrudusuario.herokuapp.com/addendereco",
+    "https://projetocrudusuario.herokuapp.com/usuario/{usuario_id}",
+    "https://projetocrudusuario.herokuapp.com/endereco/{endereco_id}",
+    "https://projetocrudusuario.herokuapp.com/usuarioput/{usuario_id}",
+    "https://projetocrudusuario.herokuapp.com/enderecoput/{endereco_id}",
+    "https://projetocrudusuario.herokuapp.com/enderecodel/{usuario_id}",
+    "https://projetocrudusuario.herokuapp.com/enderecodel/{endereco_id}"
 
 ]
 
