@@ -15,9 +15,39 @@ async function fazPost(url, body) {
 
 }
 
+async function post_endereco(usuario_id) {
+
+    console.log(usuario_id)
+
+    let url = "https://projetocrudusuario.herokuapp.com/addendereco"
+    let pais = document.getElementById("endereco_pais").value
+    let estado = document.getElementById("endereco_estado").value
+    let municipio = document.getElementById("endereco_municipio").value
+    let cep = document.getElementById("endereco_cep").value
+    let logradouro = document.getElementById("endereco_logradouro").value
+    let numero = document.getElementById("endereco_numero_da_casa").value
+    let complemento = document.getElementById("endereco_complemento").value
+    let idusuario = usuario_id
+
+    body = {        
+        "endereco_pais": pais,
+        "endereco_estado": estado,
+        "endereco_municipio": municipio,
+        "endereco_cep": cep,
+        "endereco_logradouro": logradouro,
+        "endereco_numero_da_casa": numero,
+        "endereco_complemento": complemento,
+        "endereco_usuario": idusuario
+    }
+
+    await fazPost(url, body);
+
+
+}
+
 async function cadastraUsuario() {
     event.preventDefault();
-    let url = "http://127.0.0.1:8000/addusuarios"
+    let url = "https://projetocrudusuario.herokuapp.com/addusuarios"
     let nome = document.getElementById("usuario_nome").value
     let email = document.getElementById("usuario_email").value
     let cpf = document.getElementById("usuario_cpf").value
@@ -43,13 +73,18 @@ async function cadastraUsuario() {
         let teste = await fazPost(url, body);
 
         console.log(teste.usuario_id)
+        let id = teste.usuario_id
+
+        await post_endereco(id);
 
 
     }else{
         return alert("Senha diferente de Confirma Senha");
     }
 
+
     
     
     
 }
+
